@@ -2,7 +2,7 @@ name: resourcegroup_deployment
 on: 
     push
 env:
-   ARM_TEMPLATE: infra/rgd.yml
+   ARM_TEMPLATE: infra/rsd.json
    name: lol
    SUBSCRIPTION_ID: ${{ secrets.SUBSCRIBE_ID}}
 
@@ -19,9 +19,12 @@ jobs:
           with:
            creds: ${{ secrets.AZURE_CREDENTIALS }}
         
-
+        - name: azure set subscription
+          run: |
+            az account set --subscription ${{secrets.SUBSCRIPTION}}
     
-    
- 
+        - name: deployment
+          run: |
+            az deployment group  --template-file ${{env.ARM_TEMPLATE}}
 
 
