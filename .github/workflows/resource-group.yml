@@ -5,6 +5,7 @@ env:
    ARM_TEMPLATE: infra/rsd.json
    name: lol
    SUBSCRIPTION_ID: ${{ secrets.SUBSCRIBE_ID}}
+   location: uksouth
 
 jobs:
     deployment:
@@ -23,6 +24,9 @@ jobs:
           run: |
             az account set --subscription ${{secrets.SUBSCRIPTION}}
     
+        - name: azure rs creation
+          run: |
+            az group create --name $env.ARM_TEMPLATE --location $env.location
         - name: deployment
           run: |
             az deployment group  create --template-file ${{env.ARM_TEMPLATE}}
