@@ -6,6 +6,7 @@ env:
    name: lol
    SUBSCRIPTION_ID: ${{ secrets.SUBSCRIBE_ID}}
    location: uksouth
+   resource-group: prueba_cicd 
 
 jobs:
     deployment:
@@ -26,9 +27,9 @@ jobs:
     
         - name: azure rs creation
           run: |
-            az group create --name $env.ARM_TEMPLATE --location ${{env.location}}
+            az group create --name ${{env.resource-group}} --location ${{env.location}}
         - name: deployment
           run: |
-            az deployment group  create --template-file ${{env.ARM_TEMPLATE}}
+            az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE}}
 
 
