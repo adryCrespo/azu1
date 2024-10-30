@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "type": "string",
+            "defaultValue": "uksouth"
+        },
+        "nombre": {
+            "type": "string",
+            "defaultValue": "prueba_cicd"
+        }
+    },
+
+    "resources": [
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2024-03-01",
+            "name": "[parameters('nombre')]",
+            "location": "[parameters('location')]"
+        }
+    ]
+
+}

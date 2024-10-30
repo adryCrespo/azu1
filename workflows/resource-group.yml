@@ -1,0 +1,27 @@
+name: resourcegroup_deployment
+on: 
+    push
+env:
+   ARM_TEMPLATE: infra/rgd.yml
+   name: lol
+   SUBSCRIPTION_ID: ${{ secrets.SUBSCRIBE_ID}}
+
+jobs:
+    deployment:
+        runs-on: ubuntu-latest
+    
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+    
+        - name: azure login
+          uses: azure/login@v2
+          with:
+           creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
+
+    
+    
+ 
+
+
