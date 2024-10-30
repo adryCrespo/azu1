@@ -25,6 +25,6 @@ jobs:
     
         - name: deployment
           run: |
-            az deployment group  --template-file ${{env.ARM_TEMPLATE}}
+            az deployment group  create --template-file ${{env.ARM_TEMPLATE}}
 
 
