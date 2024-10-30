@@ -8,7 +8,7 @@
         },
         "nombre": {
             "type": "string",
-            "defaultValue": "prueba_cicd"
+            "defaultValue": "prueba-cicd"
         }
     },
 
