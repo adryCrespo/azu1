@@ -35,15 +35,13 @@ jobs:
 
         - name: v1
           run: |
-            Chorradas=3342
-            echo tt=112 >> sos
-            chmod 777 sos
+            export Chorradas=3342
+        
 
         - name: v2
           run: |
             ls -lha   
         - name: v3
           run: |
-            source sos
-            echo "kkk $tt"
+            echo "kkk $Chorradas"
             
