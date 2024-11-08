@@ -53,7 +53,7 @@ jobs:
           
   
         - name: v4
-            run: |
+          run: |
               echo "aaaa $JSON_RESPONSE" 
         # - name: Set another variable
         #   id: set_my_var
