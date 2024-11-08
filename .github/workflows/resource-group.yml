@@ -35,9 +35,13 @@ jobs:
 
         - name: v1
           run: |
-            echo "Chorradas=3342" >> RR.txt
-     
+            Chorradas=3342
+            tt=112 >> sos
+
         - name: v2
           run: |
-            echo source RR.txt
+            ls -lha   
+        - name: v3
+          run: |
+            
             echo "wwww $Chorradas"
