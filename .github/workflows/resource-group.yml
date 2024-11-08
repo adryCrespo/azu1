@@ -45,3 +45,9 @@ jobs:
           run: |
             echo "kkk $Chorradas"
             
+        - name: Set another variable
+          id: set_my_var
+          run: echo "::set-output name=my_var::new_value"
+
+        - name: Use the variable
+          run: echo "${{ steps.set_my_var.outputs.my_var }}" 
