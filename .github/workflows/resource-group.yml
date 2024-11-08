@@ -40,4 +40,4 @@ jobs:
         - name: v2
           run: |
             echo source RR.txt
-            echo $Chorradas
+            echo "wwww $Chorradas"
