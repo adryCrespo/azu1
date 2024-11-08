@@ -46,4 +46,4 @@ jobs:
           run: |
             source sos
             echo "kkk $tt"
-            echo "wwww $Chorradas"
+            
