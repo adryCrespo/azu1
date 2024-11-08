@@ -35,19 +35,17 @@ jobs:
 
         - name: v1
           run: |
-            export Chorradas=3342
+            echo "action_state=yellow" >> "$GITHUB_ENV"
         
 
         - name: v2
           run: |
-            ls -lha   
-        - name: v3
-          run: |
-            echo "kkk $Chorradas"
-            
-        - name: Set another variable
-          id: set_my_var
-          run: echo "::set-output name=my_var::new_value"
+            echo "aaaa $action_state" 
 
-        - name: Use the variable
-          run: echo "${{ steps.set_my_var.outputs.my_var }}" 
+
+        # - name: Set another variable
+        #   id: set_my_var
+        #   run: echo "::set-output name=my_var::new_value"
+
+        # - name: Use the variable
+        #   run: echo "${{ steps.set_my_var.outputs.my_var }}" 
