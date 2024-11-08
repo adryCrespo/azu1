@@ -16,20 +16,28 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v4
     
-        - name: azure login
-          uses: azure/login@v2
-          with:
-           creds: ${{ secrets.AZURE_CREDENTIALS }}
+        # - name: azure login
+        #   uses: azure/login@v2
+        #   with:
+        #    creds: ${{ secrets.AZURE_CREDENTIALS }}
         
-        - name: azure set subscription
-          run: |
-            az account set --subscription ${{secrets.SUBSCRIPTION}}
+        # - name: azure set subscription
+        #   run: |
+        #     az account set --subscription ${{secrets.SUBSCRIPTION}}
     
-        - name: azure rs creation
-          run: |
-            az group create --name ${{env.resource-group}} --location ${{env.location}}
-        - name: deployment
-          run: |
-            az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE}}
+        # - name: azure rs creation
+        #   run: |
+        #     az group create --name ${{env.resource-group}} --location ${{env.location}}
+        # - name: deployment
+        #   run: |
+        #     az deployment group  create  --resource-group ${{env.resource-group}}  --template-file ${{env.ARM_TEMPLATE}}
 
 
+        - name: v1
+          run: |
+            echo "Chorradas=3342" >> RR.txt
+     
+        - name: v2
+          run: |
+            echo source RR.txt
+            echo $Chorradas
