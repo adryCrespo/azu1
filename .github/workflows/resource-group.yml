@@ -42,7 +42,19 @@ jobs:
           run: |
             echo "aaaa $action_state" 
 
-
+        - name: Set the value in bash
+          id: step_one
+          run: |
+              {
+                echo 'JSON_RESPONSE<<EOF'
+                curl https://google.com
+                echo EOF
+              } >> "$GITHUB_ENV"
+          
+  
+        - name: v4
+            run: |
+              echo "aaaa $JSON_RESPONSE" 
         # - name: Set another variable
         #   id: set_my_var
         #   run: echo "::set-output name=my_var::new_value"
